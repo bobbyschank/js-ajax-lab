@@ -1,16 +1,16 @@
 console.log('twerkin');
-$(document).ready(function() {
-	$.ajax({
-		url: 'https://ga-cat-rescue.herokuapp.com/api/cats',
-		method: 'GET'
-			})
-	.done(function(data) {
-				var parsedCats = JSON.parse(data);
-				console.log(parsedCats);
-				 for (var i = 0; i < parsedCats.length; i++) {
-				 	$('#cats').append('<li>'+parsedCats[i].name + " - "+ parsedCats[i].note+'</li>');
-				 }
-	});
+
+
+$.ajax({
+	url: 'https://ga-cat-rescue.herokuapp.com/api/cats',
+	method: 'GET'
+		})
+.done(function(data) {
+			var parsedCats = JSON.parse(data);
+			console.log(parsedCats);
+			 for (var i = 0; i < parsedCats.length; i++) {
+			 	$('#cats').append('<li>'+parsedCats[i].name + " - "+ parsedCats[i].note+'</li>');
+			 }
 
 	$('#new-cat').submit(function(event){
 		console.log("FUnction Event");
